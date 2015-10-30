@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>OBJCREATE</title>
+
+    <!-- Bootstrap core CSS -->
+    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+	<link href="bootstrap2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <!--<link href="css/custom/navbar-fixed-top.css" rel="stylesheet">
+	<link href="css/custom/stickup.css" rel="stylesheet">
+	<link href="css/custom/dashboard.css" rel="stylesheet">-->
+	<link href="css/custom/objCreate.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+		<!--<div class="">
+			<form class="form-inline">
+				<label class="control-label" for="inputEmail">Email</label>
+				<input type="text" class="input-small span3" placeholder="Email">
+				<label class="control-label" for="inputPassword">Password</label>
+				<input type="password" class="input-small span3" placeholder="Password">
+			</form>
+		</div>-->
+		<div class="">
+			<table class="table table-hover table-striped table-bordered table-condensed">
+				<caption></caption>
+				<thead>
+					<tr>
+						<th><button type="button" class="btn btn-primary item-plus"><i class="icon-plus   icon-white"></i></button></th>
+						<th>Name</th>
+						<th>Type</th>
+						<th>Default</th>
+						<th>Key</th>
+						<th>view</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="form-edit">
+						<td><button type="button" class="btn btn-danger item-del"><i class="icon-remove   icon-white"></i></button></td>
+						<td class="input-container"><input type="text" placeholder="input name" class = "attrname"><h6 style="display: none;"></h6></td>
+						<td class="input-container">
+							<select class="span3">
+								<option></option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+							<h6 style="display: none;"></h6>
+						</td class="input-container">
+						<td><input type="text" placeholder="input default"><h6 style="display: none;"></h6></td>
+						<td>
+							<input type="checkbox" value="key">
+							<input type="hidden" value="U111111111111111">
+						</td>
+						<td><button type="button" class="btn btn-success item-ok"><i class="icon-eye-open     icon-white"></i></button></td>
+					</tr>
+					<tr class="form-edit">
+						<td><button type="button" class="btn btn-danger item-del"><i class="icon-remove   icon-white"></i></button></td>
+						<td class="input-container"><input type="text" placeholder="input name" class = "attrname"><h6 style="display: none;"></h6></td>
+						<td class="input-container">
+							<select class="span3">
+								<option></option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+							<h6 style="display: none;"></h6>
+						</td>
+						<td class="input-container"><input type="text" placeholder="input default"><h6 style="display: none;"></h6></td>
+						<td>
+							<input type="checkbox" value="key">
+							<input type="hidden" value="U222222222222222">
+						</td>
+						<td><button type="button" class="btn btn-success item-ok"><i class="icon-eye-open icon-white"></i></button></td>
+					</tr>
+					<tr class="form-edit">
+						<td><button type="button" class="btn btn-danger item-del"><i class="icon-remove icon-white"></i></button></td>
+						<td class="input-container"><input type="text" placeholder="input name" class = "attrname"><h6 style="display: none;"></h6></td>
+						<td class="input-container">
+							<select class="span3">
+								<option></option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+							<h6 style="display: none;"></h6>
+						</td>
+						<td class="input-container"><input type="text" placeholder="input default"><h6 style="display: none;"></h6></td>
+						<td>
+							<input type="checkbox" value="key">	
+							<input type="hidden" value="U333333333333333">
+						</td>
+						<td><button type="button" class="btn btn-success item-ok"><i class="icon-eye-open icon-white"></i></button></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div class="well well-select clearfix" title="外键关联">
+				<div class="key-relations">
+					<!--<select class="span3 forekey clearfix" title="外键">
+							<option>选择此主键关联外键</option>
+					</select>-->
+					<div class="input-append clearfix left-float foreign-key" title="外键选择">
+						<input id="appendedDropdownButton" class="span2" type="text" placeholder="输入或选择外键">
+						<div class="btn-group">
+							<button class="btn dropdown-toggle forekey-btn" data-toggle="dropdown">
+								外键
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu">
+								<li>请先输入属性名</li>
+							</ul>
+						</div>
+					</div>
+					<div class="line s2mk"></div>
+					<div class="input-append clearfix left-float sheet" title="数据表选择">
+						<input id="appendedDropdownButton" class="span2" type="text" placeholder="输入或选择外数据表">
+						<div class="btn-group">
+							<button class="btn dropdown-toggle" data-toggle="dropdown">
+								表
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu">
+								<li>1</li>
+								<li>2</li>
+								<li>3</li>
+							</ul>
+						</div>
+					</div>
+					<div class="line mk2fk"></div>
+					<div class="input-append clearfix left-float major-key" title="主键选择">
+						<input id="appendedDropdownButton" class="span2" type="text" placeholder="输入或选择主键">
+						<div class="btn-group">
+							<button class="btn dropdown-toggle" data-toggle="dropdown">
+								主键
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu">
+								<li>1</li>
+								<li>2</li>
+								<li>3</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="well well-btn" style="max-width: 224px;min-width: 224px; margin: 0 auto 10px;">
+				<button class="btn btn-large btn-primary submit" type="button">提交全部内容</button>
+				<button class="btn btn-large" type="button">取消</button>
+			</div>
+		</div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery-1.8.3.js"></script>
+	<!--<script src="js/jquery.js"></script>-->
+	<script src="assets/js/docs.min.js"></script>
+	<script src="assets/js/src/application.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+	<script type="text/javascript"> //initiating jQuery 
+
+		$('.item-plus').click(function(){
+			var uuid = 'U'+ Math.random()*10e16;
+
+			var item = "<tr class='form-edit'><td><button type='button' class='btn btn-danger  item-del'><i class='icon-remove icon-white'></i></button></td><td class='input-container'><input type='text' placeholder='input name' class = 'attrname'><h6 style='display: none;'></h6></td><td class='input-container'><select class='span3'><option></option><option>2</option><option>3</option><option>4</option><option>5</option></select><h6 style='display: none;'></h6></td><td class='input-container'><input type='text' placeholder='input default'><h6 style='display: none;'></h6></td><td><input type='checkbox' value='key'><input type='hidden' value='"+uuid+"'></td><td><button type='button' class='btn btn-success item-ok'><i class='icon-eye-open icon-white'></i></button></td></tr>";
+			
+			
+			$('.table>tbody').append($(item));
+		});
+	
+		$('.item-del').live('click',function(){
+			$(this).parents('tr').remove();
+		});
+
+		$('.item-ok').live('click',function(){
+			//alert($(this).parents('tr').html());
+			$.each($(this).parents('tr').children('td:has(input[type="text"])'),function(){
+				var val = $(this).children('input').val();
+				$(this).children('input').hide();
+				$(this).children('h6').html(val).show();
+			});
+			$.each($(this).parents('tr').children('td:has(select)'),function(){
+				var val = $(this).children('select').val();
+				$(this).children('select').hide();
+				$(this).children('h6').html(val).show();
+			});
+			var ckbxtr = $(this).parents('tr').children('td:has(input[type="checkbox"])');
+			var ckbx = ckbxtr.children('input[type="checkbox"]');
+			$(ckbx).hide();
+			if(ckbx.prop('checked')){
+				$(ckbxtr).append('<i class="icon-ok"></i>');
+			}
+			$(this).children('i').removeClass('icon-eye-open').addClass('icon-edit');
+			$(this).removeClass('btn-success').addClass('btn-inverse').addClass('item-edit').removeClass('item-ok');
+			//$(this).parents('tr').removeClass('form-edit');
+		});
+
+		$('.item-edit').live('click',function(){
+			$.each($(this).parents('tr').children('td:has(input[type="text"])'),function(){
+				//var val = $(this).children('input').val();
+				$(this).children('h6').hide();
+				$(this).children('input').show();
+			});
+			$.each($(this).parents('tr').children('td:has(select)'),function(){
+				//var val = $(this).children('select').val();
+				$(this).children('h6').hide();
+				$(this).children('select').show();
+			});
+			$(this).parents('tr').children('td:has(input[type="checkbox"])').children('.icon-ok').remove();
+			$(this).parents('tr').children('td:has(input[type="checkbox"])').children('input[type="checkbox"]').show();
+			$(this).children('i').removeClass('icon-edit').addClass('icon-eye-open');
+			$(this).removeClass('btn-inverse').addClass('btn-success').addClass('item-ok').removeClass('item-edit');
+			
+		});
+
+		$('.forekey-btn').click(function(){
+			$('.forekey-btn').next().empty();
+			$.each($('.attrname'),function(){
+				var option = $('<li>').text($(this).val());
+				if($(this).val()!=''){
+					$('.forekey-btn').next().append(option);
+				}
+			});
+			if($('.forekey-btn').next().html()==''){
+				var li = $('<li>').text('请先输入属性名').val(0);
+				$('.forekey-btn').next().append(li);
+				$(li).click(function(){
+					$('.attrname:eq(0)').focus();
+				});
+			}
+		});
+		
+		$('.dropdown-menu > li').live('click',function(){
+			if($(this).text()=='请先输入属性名'){
+				return;
+			}
+			$(this).parent().parent().prev().val($(this).text());	
+		});
+
+		$('.submit').click(function(){
+			checkNullForm();
+		});
+
+		function checkNullForm(){
+			var isNotEmpty = true;
+			$('select').each(function(){
+				if($(this).val()==''){
+					$(this).focus();
+					isNotEmpty = false;
+					return false;
+				}
+			});
+			$('input[type=text]').each(function(){
+				if($(this).val()==''){
+					$(this).focus();
+					isNotEmpty = false;
+					return false;
+				}
+			});
+			
+
+			if(!isNotEmpty)return;
+		}
+	</script>
+  </body>
+</html>

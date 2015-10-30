@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<script src="js/core/jquery-1.8.3.js"></script>
+	<!--<script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>-->
+	<script src="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script src="js/mobileList.js"></script>
+</head>
+<body>
+
+<div data-role="page" id="pageone">
+	<div data-role="header">
+		<h1>sheet</h1>
+	</div>
+
+    <div class="content" data-role="content">
+		    <!-- <ul data-role="listview">
+		      <li class="listItem"><a href="#">列表项</a></li>
+		    </ul> -->
+    </div>
+
+    <div class="more" data-role="footer">
+    <h1>加载更多...</h1>
+    </div>
+
+    <script type="text/javascript">
+		
+
+		$("div.content").moblieList({
+			resource:'events.json',
+			itemTap:function(){alert('tap')}
+		});
+
+    	// $(document).ready(function(){
+    	// 	$('.more').hide();
+    	// 	var total_height = $(window).height();
+    	// 	var li_height = $('li').height();
+    	// 	var li_size = parseInt((total_height/li_height)*2);
+    	// 	for (var i = 0; i <= li_size; i++) {
+    	// 		var li_modal = $('.listItem').eq(0).clone();
+    	// 		$(li_modal).insertBefore($('.listItem').last());
+    	// 	};
+    	// });
+
+		// $(document).on("taphold",".listItem > a",function(){
+		// 	$(this).css({background:"red"});
+		// });
+
+		// $(document).on("scroll",function(){
+		// 	var last2top = $('.listItem').last().offset().top;
+		// 	var window_height = $(window).height();
+		// 	var wid2top = $(document).scrollTop();
+
+		// 	if((last2top-window_height-wid2top)<=0){
+		// 		$('.more').show();
+		// 	}else{
+		// 		$('.more').hide();
+		// 	}
+		// });
+
+	</script>
+</div>
+
+</body>
+</html>

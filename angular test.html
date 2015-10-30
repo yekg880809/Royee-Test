@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="charset" content="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="aaa">
+		<meta name="author" content="yhx">
+		<script type="text/javascript" src="js/core/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="js/core/angular.min.js"></script>
+		<title>authority for angular</title>
+		
+		<!-- Bootstrap core CSS -->
+    	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+    	<!-- Custom styles for this template -->
+		<link href="css/custom/TDM_list.css" rel="stylesheet">
+	    <link href="css/custom/TDM_modal.css" rel="stylesheet">
+		<link href="css/custom/authority.css" rel="stylesheet">
+
+	</head>
+	<body ng-app="auth-plank">
+		<div class="wrap-table clearfix">
+			<h3 class="bar">
+				<i class="icon-play"></i><span class="black ui-icon4 baseUi"></span>
+			</h3>
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<div class="col-sm-4">
+							<div class="col-sm-11 form-search">
+								<div class="input-group search-block">
+							    	<input name="name" type="text" class="form-control search-query" placeholder="查询用户组">
+							    	<span class="input-group-btn">
+							        <button type="submit" class="btn btn-a group-search" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>查询</button>
+							    	</span>
+							    </div><!-- /input-group -->
+							</div>
+							<table class="table table-bordered table-hover hr-table group-table">
+								<thead>
+									<tr>
+										<th><i><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span></i></th>
+										<th>用户组</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td style="display:none;"><input type="checkbox"/></td>
+										<td>aaa</td>
+									</tr>
+									
+								</tbody>
+							</table>
+					</div>
+					<div class="col-sm-8">
+						<tab-set>
+							<tab tab-active="true" tab-name="菜单权限" tab-type="url">
+								<content shown="true" id="url-auth">
+									<btn-group>
+										<btn type="plus" name="增加权限"></btn>
+										<btn type="trash" name="删除权限"></btn>
+									</btn-group>
+									<auth-list type="url">
+									</auth-list>
+								</content>
+							</tab>
+							<tab  tab-name="对象权限" tab-type="obj" >
+								<content id="obj-auth">
+									<btn-group>
+										<btn type="plus" name="增加权限"></btn>
+										<btn type="trash" name="删除权限"></btn>
+										<btn type="wrench" name="操作权限"></btn>
+									</btn-group>
+									<auth-list type="obj">
+									</auth-list>
+								</content>
+							</tab>
+						</tab-set>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			var authPlankModule = angular.module("auth-plank",[]);
+			
+			authPlankModule
+				.directive("tabSet",function(){
+					return {
+						restrict : "E",
+						replace : true,
+						transclude: true,
+						template : "<ul class='nav nav-tabs pull-left auths' ng-transclude></ul>",
+						link : function(scope,element,attrs){
+						}
+					}
+				})
+				.directive("tab",function(){
+					return {
+						restrict : "EA",
+						replace : true,
+						transclude: true,
+						template : "<li role='presentation'><a href='#'></a><div ng-transclude></div></li>",
+						link : function(scope,element,attrs){
+							$(element).children('a').html(attrs.tabName);
+							$(element).children('a').attr("class",attrs.tabType);
+							if(attrs.tabActive){$(element).attr("class","active")};
+						}
+					}
+				})
+				.directive("content",function(){
+					return {
+						restrict : "EA",
+						replace : true,
+						template : "<section ng-transclude class='auth-block'></section>",
+						transclude: true,
+						link : function(scope,element,attrs){
+							$(element).attr("id",attrs.id);
+							$(element).hide();
+							if(attrs.shown){$(element).show()};
+							$(element).clone().insertAfter(".nav-tabs");
+							$(element).closest('div').remove();
+						}
+					}
+				})
+				.directive("btnGroup",function(){
+					return {
+						restrict : "E",
+						replace : true,
+						transclude: true,
+						template : "<div ng-transclude class='btn-group url-btns'></div>",
+						link : function(scope,element,attrs){
+						}
+					}
+				})
+				.directive("btn",function(){
+					return {
+						restrict : "E",
+						replace : true,
+						template : "<a class='btn' role='button' data-toggle='modal'><span class='glyphicon' aria-hidden='true'></span><span class='tab-name'></span></a>",
+						link : function(scope,element,attrs){
+							$(element).children('.tab-name').text(attrs.name);
+							$(element).find('.glyphicon').addClass('glyphicon-'+attrs.type);
+						}
+					}
+				})
+				.directive("authList",function(){
+					return {
+						restrict : "E",
+						replace : true,
+						template : "<table class='table table-bordered table-hover auth-table'><thead><tr></tr></thead></table>",
+						link : function(scope,element,attrs){
+						}
+					}
+				})
+
+		</script>
+	</body>
+
+</html>

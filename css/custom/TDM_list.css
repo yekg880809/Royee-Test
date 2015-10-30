@@ -1,0 +1,319 @@
+body{
+	background-color: #f7f7f7;
+}
+
+.auth-block a.btn{
+	color: #bfbfbf;
+	border: 1px solid #bfbfbf;
+}
+
+nav{
+	height: 130px;
+	position: fixed;
+	width: 100%;
+}
+
+nav a{
+	color: #fff;
+}
+
+.nav-head{
+	height: 80px;
+	background-color: #00a6e9;
+}
+
+.nav-body{
+	height: 50px;
+	background-color: #0d394f;
+}
+
+.nav-search{
+	float: left;
+	width: 25%;
+	margin-top: 24px;
+	margin-left: 15%;
+}
+
+.nav-search .form-control{
+	height:32px;
+	color: #fff;
+	border-width: 0px;
+	border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    background-color: #0067a6;
+}
+
+.search-btn{
+	background-color: #e74c3c;
+	padding:5px 12px;
+	color: #fff;
+	border-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.nav-content{
+	width: 1000px;
+	text-align:center;
+	margin-left:auto; 
+	margin-right:auto;
+}
+.nav-content{
+	
+}
+
+.navbar-brand{
+	margin-top: 15px;
+	font-size: 20px;
+}
+
+.nav-head ul{
+	margin-top: 15px;
+}
+
+.nav-head .navbar-nav > li {
+    width: 92px;
+}
+
+.nav-head .navbar-nav > li > a:hover,.nav-head .navbar-nav > li> a:focus {
+    background: none;
+}
+
+.nav-body .navbar-nav > li {
+    width: 115px;
+}
+
+.nav-body .navbar-nav > li > a:hover,.nav-body .navbar-nav > li > a:focus{
+    background: #305066;
+    color: #fff;
+}
+
+.navbar-nav > li > {
+	padding-left: 0px;
+}
+
+.logo{
+	float: left;
+	margin-top: 20px;
+	margin-right: 0px;
+}
+
+.logo img{
+	width: 40px;
+	height: 40px;
+}
+
+.menu-logo{
+	float: left;
+	margin-top: 12px;
+	margin-right: 0px;
+	width: 25px;
+	height: 25px;
+}
+
+.main{
+	position: absolute;
+	height: 100px;
+	width: 1000px;
+	margin-top: 148px;
+	left: 50%;
+	margin-left: -500px;
+}
+
+.main-files{
+	height: 60px;
+	width: 100%;
+	background-color: #fff;
+
+}
+
+.main-files .navbar-nav > li{
+    padding: 5px 0px 0px 20px;
+}
+
+.main-files .navbar-nav > li > a{
+    width: 78px;
+    color: #666;
+}
+
+.main-files .navbar-nav > li > img{
+	margin-right: 10px;
+}
+
+.main-files .navbar-nav > li:last-child > a{
+    width: 120px;
+}
+
+.file-search{
+    float: right;
+    height: 60px;
+    width: 168px;
+    margin-right: 10px;
+}
+
+.file-search .input-group{
+	margin-top: 12px;
+}
+
+.file-search .btn{
+	background-color: #fff;
+	border-top:1px solid #ccc; 
+	border-right:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+
+.file-search .form-control{
+	border-right:0px solid #ccc;
+}
+
+.main-content{
+	height: 422px;
+	width: 100%;
+	margin-top:18px;
+}
+
+.main-content tr{
+	height: 40px;
+}
+
+.main-content tr > td:first-child{
+	 padding-left: 60px;
+	 width:100px;
+}
+
+.main-content tr > td:first-child >input{
+	width: 20px;
+	height:20px;
+}
+
+.main-content tr > td:last-child{
+	 padding-left: 135px;
+	 width: 325px;
+}
+
+.table-operation{
+	height: 50px;
+	width: 100%;
+}
+
+.main-content table{
+	border-bottom: 1px solid #ddd;
+}
+
+.table-operation .check-all{
+	width:100px;
+	height: 100%;
+	float: left;
+}
+
+.table-operation .check-all > input{
+	width: 20px;
+	height:20px;
+	margin-left: 60px;
+    margin-top: 15px;
+}
+
+.table-operation .check-info{
+	float: left;
+	height: 100%; 
+	line-height:50px;   
+	padding-right:20px;
+}
+
+.table-operation .btns{
+	float: left;
+	height: 100%; 
+	padding-top:9px;
+}
+
+.table-operation .btns > .btn {
+	height: 32px;
+	background-color: #fff;
+	border: 1px solid #bfbfbf;
+	margin-right: 5px;
+	padding-top:6px; 
+}
+
+.table-operation .btns > .btn .caret{
+	margin-left: 8px;
+}
+
+.table-operation .btns > .btn > img{
+	width: 20px;
+	height:20px;
+	margin-right:5px;
+}
+
+.main-content table .ftype{
+	width: 40px;
+	padding-left: 0;
+}
+.main-content table .fname{
+	
+}
+.main-content table .fopreation{
+	width:140px;
+}
+
+.main-content table .fopreation a{
+	margin-right: 10px;
+	color: #666;
+}
+
+.main-content table .fopreation a:hover,.main-content table .fopreation a:focus{
+	color: #000;
+}
+
+.main-content table .fsize{
+	width: 50px;
+}
+
+.main-content .table-footer div{
+	float: left;
+}
+
+.file-total{
+	width: 500px;
+	padding-left: 60px;
+}
+
+.table-footer .pagination{
+	float: right;
+	margin-top: 0;
+}
+
+.pagination > li > a, .pagination > li > span{
+	background-color: #f7f7f7;
+}
+
+.btn-a{
+	background-color: #e74c3c;
+	color: #fff;
+}
+
+.btn-g{
+	background-color: #2ecc71;
+	color: #fff;
+}
+
+.btn-d{
+	background-color: #bfbfbf;
+	color: #666;
+}
+
+.btn-d2{
+	background-color: #bfbfbf;
+	color: #fff;
+}
+
+.btn-center{
+	left: 160px;
+}
+
+.glyphicon{
+	margin-right: 5px;
+}
+
+.no-after{
+	margin-right: 0px;
+}

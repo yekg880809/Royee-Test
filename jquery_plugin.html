@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jrtabs</title>
+	<link rel="stylesheet" href="jrtabs.css">
+	<script src="js/core/jquery-1.8.3.min.js"></script>
+	<script src="js/jquery-plugins.js"></script>
+</head>
+<body>
+	<header></header>
+	<menu></menu>
+	<main><div class="jrtabs"></div></main>
+	<footer></footer>
+	<script type="text/javascript">
+	$(".jrtabs").jrtabs({
+		position:'left',
+		useAjax:true,
+		url:''
+	});
+	$(".jrtabs").jrtabs('add',{
+		title:'titles'
+	});
+	// $(".jrtabs").jrtabs('remove');
+	</script>
+</body>
+</html>

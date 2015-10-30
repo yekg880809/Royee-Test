@@ -1,0 +1,26 @@
+.modal-header{
+	padding: 3px 15px;
+}
+
+.modal-header .close {
+    margin-top: 20px;
+}
+
+.alert{
+	margin: 0;
+}
+
+.content{
+	margin: 0 0 10px;
+	clip : auto;
+	word-wrap :break-word ;
+}
+
+.input-group-fix[class*="col-"]{
+	padding-left: 15px;
+}
+
+.sub-title{
+	background-color: #eee;
+}
+

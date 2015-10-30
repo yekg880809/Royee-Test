@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="aaa">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>authority-1</title>
+
+    <!-- Bootstrap core CSS -->
+    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+	<link href="bootstrap2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <!--<link href="css/custom/navbar-fixed-top.css" rel="stylesheet">
+	<link href="css/custom/stickup.css" rel="stylesheet">-->
+	<link href="css/custom/authority.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+	<div class="glass-wall" style="display:none;"></div>
+	<div id="null-warning" class="modal hide fade" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+	  
+	  <div class="modal-header">
+		<button type="button" class="close alert-close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h3>警告</h3>
+	  </div>
+	  <div class="modal-body">
+		<div class="alert alert-block alert-warning fade in">
+			<h3 style="display:inline;">Warning!</h3>	
+			<h4 class="alert-heading" style="display:inline;">请选择需要添加的权限</h4>		
+		</div>
+	  </div>
+	</div>
+	
+	 
+	<!-- Modal -->
+	<div id="auth-list" class="modal hide fade" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+	  <div class="modal-header">
+		<button type="button" class="close list-close" data-dismiss="modal" aria-hidden="true">×</button>
+		<h3 id="myModalLabel">权限列表</h3>
+	  </div>
+	  <div class="modal-body">
+		<div class="url-list auth-list" style="display:none;">
+			<form class="form-search">
+				<div class="input-append">
+					<input type="text" class="span3 search-query">
+					<button type="submit" class="btn">查询</button>
+				</div>
+			</form>
+			<table class="table table-striped table-bordered table-hover">
+				<thead>
+					<tr>
+						<th><i class="icon-eye-open"></i></th>
+						<th>链接名称</th>
+						<th>链接描述</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><input class="checkid" type="checkbox"/></td>
+						<td>链接dd</td>
+						<td>链接dd</td>
+					</tr>
+					<tr>
+						<td><input class="checkid" type="checkbox"/></td>
+						<td>链接dd</td>
+						<td>链接dd</td>
+					</tr>
+					<tr>
+						<td><input class="checkid" type="checkbox"/></td>
+						<td>链接dd</td>
+						<td>链接dd</td>
+					</tr>
+					<tr>
+						<td><input class="checkid" type="checkbox"/></td>
+						<td>链接dd</td>
+						<td>链接dd</td>
+					</tr>
+					<tr>
+						<td><input class="checkid" type="checkbox"/></td>
+						<td>链接dd</td>
+						<td>链接dd</td>
+					</tr>
+					<tr>
+						<td><input class="checkid" type="checkbox"/></td>
+						<td>链接dd</td>
+						<td>链接dd</td>
+					</tr>
+					<tr>
+						<td><input class="checkid" type="checkbox"/></td>
+						<td>链接dd</td>
+						<td>链接dd</td>
+					</tr>
+					<tr>
+						<td><input class="checkid" type="checkbox"/></td>
+						<td>链接dd</td>
+						<td>链接dd</td>
+					</tr>
+					<tr>
+						<td><input class="checkid" type="checkbox"/></td>
+						<td>链接dd</td>
+						<td>链接dd</td>
+					</tr>
+					<tr>
+						<td><input class="checkid" type="checkbox"/></td>
+						<td>链接dd</td>
+						<td>链接dd</td>
+					</tr>
+					<tr>
+						<td><input class="checkid" type="checkbox"/></td>
+						<td>链接dd</td>
+						<td>链接dd</td>
+					</tr>
+					<tr>
+						<td><input class="checkid" type="checkbox"/></td>
+						<td>链接dd</td>
+						<td>链接dd</td>
+					</tr>
+					<tr>
+						<td><input class="checkid" type="checkbox"/></td>
+						<td>链接dd</td>
+						<td>链接dd</td>
+					</tr>
+					<tr>
+						<td><input class="checkid" type="checkbox"/></td>
+						<td>链接dd</td>
+						<td>链接dd</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="obj-list auth-list" style="display:none;">
+			<form class="form-search">
+				<div class="input-append">
+					<input type="text" class="span3 search-query">
+					<button type="submit" class="btn">查询</button>
+				</div>
+			</form>
+			<table class="table table-striped table-bordered table-hover">
+				<thead>
+					<tr>
+						<th><i class="icon-eye-open"></i></th>
+						<th>对象名称</th>
+						<th>对象操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><input class="checkid" type="checkbox"/></td>
+						<td>链接dd</td>
+						<td>链接dd</td>
+					</tr>
+					<tr>
+						<td><input class="checkid" type="checkbox"/></td>
+						<td>链接dd</td>
+						<td>链接dd</td>
+					</tr>
+					<tr>
+						<td><input class="checkid" type="checkbox"/></td>
+						<td>链接dd</td>
+						<td>链接dd</td>
+					</tr>
+					<tr>
+						<td><input class="checkid" type="checkbox"/></td>
+						<td>链接dd</td>
+						<td>链接dd</td>
+					</tr>
+					<tr>
+						<td><input class="checkid" type="checkbox"/></td>
+						<td>链接dd</td>
+						<td>链接dd</td>
+					</tr>
+					<tr>
+						<td><input class="checkid" type="checkbox"/></td>
+						<td>链接dd</td>
+						<td>链接dd</td>
+					</tr>
+					<tr>
+						<td><input class="checkid" type="checkbox"/></td>
+						<td>链接dd</td>
+						<td>链接dd</td>
+					</tr>
+					<tr>
+						<td><input class="checkid" type="checkbox"/></td>
+						<td>链接dd</td>
+						<td>链接dd</td>
+					</tr>
+					<tr>
+						<td><input class="checkid" type="checkbox"/></td>
+						<td>链接dd</td>
+						<td>链接dd</td>
+					</tr>
+					<tr>
+						<td><input class="checkid" type="checkbox"/></td>
+						<td>链接dd</td>
+						<td>链接dd</td>
+					</tr>
+					<tr>
+						<td><input class="checkid" type="checkbox"/></td>
+						<td>链接dd</td>
+						<td>链接dd</td>
+					</tr>
+					<tr>
+						<td><input class="checkid" type="checkbox"/></td>
+						<td>链接dd</td>
+						<td>链接dd</td>
+					</tr>
+					<tr>
+						<td><input class="checkid" type="checkbox"/></td>
+						<td>链接dd</td>
+						<td>链接dd</td>
+					</tr>
+					<tr>
+						<td><input class="checkid" type="checkbox"/></td>
+						<td>链接dd</td>
+						<td>链接dd</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	  </div>
+	  <div class="modal-footer">
+		<button class="btn btn-primary plus-success" data-dismiss="modal" aria-hidden="true">添加</button>
+	  </div>
+	</div>
+
+	<div class="wrap-table clearfix">
+			<h3 class="bar">
+				<i class="icon-play"></i><span class="black ui-icon4 baseUi">权限管理</span>
+			</h3>
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<div class="span4">
+							<form class="form-search">
+								<div class="input-append search-block">
+									<input type="text" class="span8 search-query">
+									<button type="submit" class="btn">查询用户组</button>
+								</div>
+							</form>
+							<table class="table table-striped table-bordered table-hover hr-table group-table">
+								<thead>
+									<tr>
+										<th><i class="icon-user"></i></th>
+										<th>用户组</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td style="display:none;"><input type="checkbox"/></td>
+										<td>的身份</td>
+									</tr>
+									<tr>
+										<td style="display:none;"><input type="checkbox"/></td>
+										<td>的撒旦</td>
+									</tr>
+									<tr>
+										<td style="display:none;"><input type="checkbox"/></td>
+										<td>防盗锁否</td>
+									</tr>
+									<tr>
+										<td style="display:none;"><input type="checkbox"/></td>
+										<td>的权威</td>
+									</tr>
+									<tr>
+										<td style="display:none;"><input type="checkbox"/></td>
+										<td>的撒旦</td>
+									</tr>
+									<tr>
+										<td style="display:none;"><input type="checkbox"/></td>
+										<td>发热管</td>
+									</tr>
+									<tr>
+										<td style="display:none;"><input type="checkbox"/></td>
+										<td>东风恶</td>
+									</tr>
+									<tr>
+										<td style="display:none;"><input type="checkbox"/></td>
+										<td>隔热</td>
+									</tr>
+									<tr>
+										<td style="display:none;"><input type="checkbox"/></td>
+										<td>发生地方</td>
+									</tr>
+									<tr>
+										<td style="display:none;"><input type="checkbox"/></td>
+										<td>防盗锁</td>
+									</tr>
+									<tr>
+										<td style="display:none;"><input type="checkbox"/></td>
+										<td>大声地问</td>
+									</tr>
+									<tr>
+										<td style="display:none;"><input type="checkbox"/></td>
+										<td>舒服的</td>
+									</tr>
+									<tr>
+										<td style="display:none;"><input type="checkbox"/></td>
+										<td>反而更</td>
+									</tr>
+									<tr>
+										<td style="display:none;"><input type="checkbox"/></td>
+										<td>分为二分</td>
+									</tr>
+									<tr>
+										<td style="display:none;"><input type="checkbox"/></td>
+										<td>发生的</td>
+									</tr>
+									<tr>
+										<td style="display:none;"><input type="checkbox"/></td>
+										<td>份额为</td>
+									</tr>
+								</tbody>
+							</table>
+					</div>
+					<div class="span8">
+						<ul class="nav nav-tabs nav-justified pull-left auths">
+							<li class="active" role="presentation">
+								<a href="#" class="url">链接权限</a>
+							</li>
+							<li class="" role="presentation">
+								<a href="#" class="obj">对象权限</a>
+							</li>
+						</ul>
+						<section id="url-auth" class="auth-block">
+							<div class="btn-group url-btns">
+								<a href="#auth-list" class="btn auth-plus auth-url-plus" role="button" data-toggle="modal">增加权限</a>
+								<button class="btn auth-del auth-url-del">删除权限</button>
+							</div>
+							<table class="table table-striped table-bordered table-hover auth-table">
+								<thead>
+									<tr>
+										<th><i class="icon-eye-open"></i></th>
+										<th>链接名称</th>
+										<th>链接描述</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><input type="checkbox"/></td>
+										<td>链接dd</td>
+										<td>链接dd</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox"/></td>
+										<td>链接dd</td>
+										<td>链接dd</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox"/></td>
+										<td>链接dd</td>
+										<td>链接dd</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox"/></td>
+										<td>链接dd</td>
+										<td>链接dd</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox"/></td>
+										<td>链接dd</td>
+										<td>链接dd</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox"/></td>
+										<td>链接dd</td>
+										<td>链接dd</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox"/></td>
+										<td>链接dd</td>
+										<td>链接dd</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox"/></td>
+										<td>链接dd</td>
+										<td>链接dd</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox"/></td>
+										<td>链接dd</td>
+										<td>链接dd</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox"/></td>
+										<td>链接dd</td>
+										<td>链接dd</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox"/></td>
+										<td>链接dd</td>
+										<td>链接dd</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox"/></td>
+										<td>链接dd</td>
+										<td>链接dd</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox"/></td>
+										<td>链接dd</td>
+										<td>链接dd</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox"/></td>
+										<td>链接dd</td>
+										<td>链接dd</td>
+									</tr>
+								</tbody>
+							</table>
+						</section>
+						<section id="obj-auth" class="auth-block" style="display:none;">
+							<div class="btn-group url-btns">
+								<a href="#auth-list" class="btn auth-plus auth-obj-plus"  role="button" data-toggle="modal">增加权限</a>
+								<button class="btn auth-del auth-obj-del">删除权限</button>
+							</div>
+							<table class="table table-striped table-bordered table-hover auth-table">
+								<thead>
+									<tr>
+										<th><i class="icon-eye-open"></i></th>
+										<th>对象名称</th>
+										<th>对象操作</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><input type="checkbox"/></td>
+										<td>链接dd</td>
+										<td>链接dd</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox"/></td>
+										<td>链接dd</td>
+										<td>链接dd</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox"/></td>
+										<td>链接dd</td>
+										<td>链接dd</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox"/></td>
+										<td>链接dd</td>
+										<td>链接dd</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox"/></td>
+										<td>链接dd</td>
+										<td>链接dd</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox"/></td>
+										<td>链接dd</td>
+										<td>链接dd</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox"/></td>
+										<td>链接dd</td>
+										<td>链接dd</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox"/></td>
+										<td>链接dd</td>
+										<td>链接dd</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox"/></td>
+										<td>链接dd</td>
+										<td>链接dd</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox"/></td>
+										<td>链接dd</td>
+										<td>链接dd</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox"/></td>
+										<td>链接dd</td>
+										<td>链接dd</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox"/></td>
+										<td>链接dd</td>
+										<td>链接dd</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox"/></td>
+										<td>链接dd</td>
+										<td>链接dd</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox"/></td>
+										<td>链接dd</td>
+										<td>链接dd</td>
+									</tr>
+								</tbody>
+							</table>
+						</section>
+					</div>
+				</div>
+			</div>
+				
+
+
+	</div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/core/jquery-1.8.3.js"></script>
+	<!--<script src="js/jquery.js"></script>-->
+	<script src="assets/js/docs.min.js"></script>
+	<script src="assets/js/src/application.js"></script>
+    <script src="js/core/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+	<script type="text/javascript"> //initiating jQuery 
+		
+		$('.auths > li > a').click(function(){
+			$('.auths > li').removeClass('active');
+			$(this).parent().addClass('active');
+			$('.auth-block').hide();
+			$('#'+$(this).attr('class')+'-auth').show();
+		});
+
+		$('.group-table > tbody > tr > td').on('click',function(){
+			$(this).closest('tbody').children().removeClass('info');
+			$(this).closest('tbody').find('input[type=checkbox]').prop('checked',false);
+			
+			$(this).prev().children().prop('checked',true);
+			$(this).parent().addClass('info');
+			
+		});
+
+		$('.auth-del').on('click',function(){
+		});
+
+		$('.auth-plus').on('click',function(){
+			$('.glass-wall').show();
+			if($(this).hasClass('auth-url-plus')){
+				$('.url-list').show();
+			}else{
+				$('.obj-list').show();
+			}
+		});
+
+		$('.list-close').on('click',function(){
+			$('.auth-list').hide();
+		});
+
+		$('.plus-success').on('click',function(e){
+			var checklist = $('.auth-list').find('input[type=checkbox]:checked');
+			if(checklist.size()==0){
+				$('.glass-wall').show();
+				$('#null-warning').modal('show');
+				return false;
+			}
+			$('.auth-list').hide();
+			$('.glass-wall').hide();
+			$('#null-warning').modal('hide');
+		});
+
+		$('.glass-wall').click(function(){
+			//$('#auth-list').modal('hide');
+			//$(this).hide();
+		});
+
+		$('.list-close').on('click',function(){
+			$('.glass-wall').hide();
+			$('#null-warning').modal('hide');
+		});
+
+
+
+	</script>
+  </body>
+</html>

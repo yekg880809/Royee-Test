@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>XX系统</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/Custom/signin.css" rel="stylesheet">
+	<link href="css/Custom/signin2.css" rel="stylesheet">
+	
+	 <!-- Respond.js proxy on external server -->
+	<link href="http://externalcdn.com/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+	 
+	<!-- Respond.js redirect location on local server -->
+	<link href="/path/to/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+	 
+	<!-- Respond.js proxy script on local server -->
+	<script src="/path/to/respond.proxy.js"></script>
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	</nav>
+	<div class = "bgp">
+	
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-7 show-zone">
+					<div class="show-pic pic1"></div>
+					<div class="show-pic pic2"></div>
+					<div class="show-pic pic3"></div>
+				</div>
+				<div class="col-xs-4">
+					<form class="form-signin">
+						<label for="inputText" class="sr-only">用户名</label>
+						<input type="text" id="inputText" class="form-control" placeholder="用户名" required autofocus>
+						<label for="inputPassword" class="sr-only">密码</label>
+						<input type="password" id="inputPassword" class="form-control" placeholder="密码" required>
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" value="remember-me"> 记住用户名
+							</label>
+						</div>	
+						<button class="btn btn-lg btn-primary btn-block" type="submit">登陆</button>
+					</form>
+				</div>
+		</div>
+	
+	</div>
+
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/jquery-1.8.3.js"></script>
+	<!--<script src="js/jquery.js"></script>-->
+	<script src="assets/js/docs.min.js"></script>
+	<script src="assets/js/src/application.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/velocity.min.js"></script>
+	<script src="js/velocity.ui.min.js"></script>
+	<script src="js/jquery.mousewheel.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+	<script type="text/javascript"> //initiating jQuery 
+		$(document).ready(function(){
+			var x = 0;
+			$(window).scroll(function() {
+				
+				$("#inputText").val(x+=1);
+			});
+		});
+		
+		$('.show-zone').mousewheel(function(event,delta){
+			rollPic(delta);
+			//e.stopPropagation();
+		});
+
+		$('.show-pic').click(function(e){
+			$(e.target).velocity({ 
+				'z-index': 9999
+			}, 100, "easeInSine");
+			
+			$(e.target).velocity({ 
+				left: 200,
+				top: 0
+			}, 100, "easeInSine");
+			
+			var b_left = 200;
+			var b_top = 0;
+			var b_z_index = 9999;
+			$(e.target).siblings().each(function(){
+				b_left = b_left + 50;
+				b_top = b_top + 15;
+				b_z_index = b_z_index - 1;
+				$(this).velocity({
+					'z-index': b_z_index
+				}, 100, "easeInSine");
+					
+				$(this).velocity({
+					left: b_left,
+					top: b_top
+				}, 100, "easeInSine");
+			});
+			e.stopPropagation();
+		});
+
+		function rollPic(delta){
+			var b_left = 200;
+			var b_top = 0;
+			var b_z_index = 9999;
+			if(delta > 0){
+				$('.show-pic').each(function(){
+					if(b_z_index-$(this).css('z-index')==0){
+						$(this).animate({
+							'z-index': 9997,
+							left: b_left + 100,
+							top: b_top + 30
+						}, 100);
+					}else{
+						$(this).animate({
+							'z-index': parseInt($(this).css('z-index')) + 1,
+							left: parseInt($(this).css('left')) - 50,
+							top: parseInt($(this).css('top')) - 15
+						}, 100);
+					}
+				});
+			}else{
+				$('.show-pic').each(function(){
+					if(b_z_index-$(this).css('z-index')==2){
+						$(this).animate({
+							'z-index': 9999,
+							left: b_left,
+							top: b_top
+						}, 100);
+					}else{
+						$(this).animate({
+							'z-index': parseInt($(this).css('z-index')) - 1,
+							left: parseInt($(this).css('left')) + 50,
+							top: parseInt($(this).css('top')) + 15
+						}, 100);
+					}
+				});
+			}
+		}
+	</script>
+  </body>
+</html>

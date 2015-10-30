@@ -1,0 +1,72 @@
+.test-warning{
+	border-left: 6px solid #e3bc08;
+}
+
+.test-special{
+	border-left: 6px solid purple;
+}
+
+.test-important{
+	border-left: 6px solid #ad2121;
+}
+
+.test-info{
+	border-left: 6px solid #337ab7;
+}
+
+.test-success{
+	border-left: 6px solid #006400;
+}
+
+.test-default{
+	border-left: 6px solid #c3c3c3;
+}
+
+.test-inverse{
+	border-left: 6px solid #1b1b1b;
+}
+
+.progress{
+	margin-bottom: 0px;
+	height: 8px;
+	border-radius: 0px;
+}
+
+.progress-warning{
+	background-color:#e3bc08;
+	background-image: linear-gradient(to bottom, #e3bc08 0px, #e3bc08 100%);
+}
+
+.progress-special{
+	background-color:purple;
+	background-image: linear-gradient(to bottom, purple 0px, purple 100%);
+}
+
+.progress-important{
+	background-image:#ad2121;
+	background-image: linear-gradient(to bottom, #ad2121 0px, #ad2121 100%);
+}
+
+.progress-info{
+	background-image:#337ab7;
+	background-image: linear-gradient(to bottom, #337ab7 0px, #337ab7 100%);
+}
+
+.progress-success{
+	background-image:#006400;
+	background-image: linear-gradient(to bottom, #006400 0px, #006400 100%);
+}
+
+.progress-default{
+	background-image:#c3c3c3;
+	background-image: linear-gradient(to bottom, #c3c3c3 0px, #c3c3c3 100%);
+}
+
+.progress-inverse{
+	background-image:#1b1b1b;
+	background-image: linear-gradient(to bottom, #1b1b1b 0px, #1b1b1b 100%);
+}
+
+.test-status > span {
+	float: right;
+}

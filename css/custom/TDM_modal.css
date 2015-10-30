@@ -1,0 +1,100 @@
+.modal-dialog{
+	font-size: 14px;
+	color: #666;
+}
+
+.modal-dialog .modal-header{
+	padding: 13px 15px;
+}
+
+.modal-content{
+	border-radius: 3px;
+	background-color: #f7f7f7;
+	border: 5px solid #bfbfbf;
+	left: 50%;
+    width: 800px;
+    margin-left: -400px;
+}
+
+.modal-dialog h3{
+	margin-bottom: 0;
+    margin-top: 0;
+	font-size: 16px;
+}
+
+.modal-dialog .form-group .control-label{
+	padding-right: 0;
+    width: 14%;
+    font-weight:normal ;
+}
+
+.modal-dialog .form-group label + div{
+	padding-right: 0;
+}
+
+.modal-dialog .modal-body{
+	padding-bottom: 0;
+}
+
+.modal-dialog .modal-footer{
+	border-top: 0 none;
+	text-align: center;
+	padding:0 15px 15px;
+}
+
+.modal-footer .btn{
+	height: 36px;
+	padding-right:20px;
+	padding-left:20px; 
+}
+
+.form-group div{
+	float: left;
+}
+
+.up-btn{
+	margin-top: -10px;
+}
+
+.btn-group-semi-circle .btn{
+	height: 36px;
+	border-radius: 18px;
+}
+
+.btn-group-semi-circle .btn:first-child{
+	padding-left: 20px;
+}
+
+.btn-group-semi-circle .btn:last-child{
+	padding-right: 20px;
+}
+
+.tab-btns{
+	height: 38px;
+	width: 100%;
+	background-color: #efefef;
+	padding-left: 0;
+}
+
+.tab-btns .tab-btn{
+	display: block;
+	float: left;
+	height:100%;
+	padding: 6px 10px 10px 10px;
+	font-weight: bold;
+	border-top:4px solid #c8b9a2; 
+	color: #666;
+}
+
+.tab-btns .active{
+	border-top:4px solid #e74c3c; 
+	background-color: #f7f7f7;
+}
+
+.tab-btns .tab-btn:first-child{
+	border-right: 1px solid #fff;
+}
+
+.modal-dialog{
+	color: #999;
+}
